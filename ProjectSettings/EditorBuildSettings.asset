@@ -2,14 +2,15 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!1045 &1
 EditorBuildSettings:
-  serializedVersion: 2
   m_ObjectHideFlags: 0
+  serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/2dinfiniterunner/Scenes/loader.unity
-  - enabled: 1
     path: Assets/2dinfiniterunner/Scenes/menu.unity
+    guid: f3c908a5c2c7e764fb66145213a6aa0e
   - enabled: 1
     path: Assets/2dinfiniterunner/Scenes/game.unity
+    guid: a3d6f50eace39644da5f460d1334ef79
   - enabled: 1
     path: Assets/2dinfiniterunner/Scenes/Bigley.unity
+    guid: ca182abf5f232384f895c723d15df545
