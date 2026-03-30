@@ -1,16 +1,28 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1584463546194271}
+  m_IsPrefabParent: 1
 --- !u!1 &1584463546194271
 GameObject:
-  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 4717795472842473}
-  - 15: {fileID: 15747278405408137}
-  - 12: {fileID: 12922163274085418}
-  - 26: {fileID: 26477260047932940}
+  - component: {fileID: 4717795472842473}
+  - component: {fileID: 15747278405408137}
+  - component: {fileID: 12922163274085418}
+  - component: {fileID: 26477260047932940}
+  - component: {fileID: 114764812118336898}
   m_Layer: 0
   m_Name: illumpart 1
   m_TagString: Untagged
@@ -20,7 +32,7 @@ GameObject:
   m_IsActive: 1
 --- !u!4 &4717795472842473
 Transform:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1584463546194271}
@@ -29,36 +41,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
---- !u!15 &15747278405408137
-EllipsoidParticleEmitter:
-  serializedVersion: 2
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1584463546194271}
-  m_Enabled: 1
-  m_Emit: 1
-  minSize: 0.77000004
-  maxSize: 0.06
-  minEnergy: 1
-  maxEnergy: 1
-  minEmission: 20
-  maxEmission: 25
-  worldVelocity: {x: 0, y: 0, z: 0}
-  localVelocity: {x: 0, y: 0, z: -5}
-  rndVelocity: {x: 5, y: 2, z: -5}
-  emitterVelocityScale: 0
-  tangentVelocity: {x: 0, y: 0, z: 0}
-  angularVelocity: 0
-  rndAngularVelocity: 0
-  rndRotation: 0
-  Simulate in Worldspace?: 1
-  m_OneShot: 1
-  m_Ellipsoid: {x: 12, y: 2, z: 2}
-  m_MinEmitterRange: 10
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!12 &12922163274085418
 ParticleAnimator:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1584463546194271}
@@ -86,26 +73,67 @@ ParticleAnimator:
   damping: 0.1
   stopSimulation: 0
   autodestruct: 1
+--- !u!15 &15747278405408137
+EllipsoidParticleEmitter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1584463546194271}
+  serializedVersion: 2
+  m_Enabled: 1
+  m_Emit: 1
+  minSize: 0.77000004
+  maxSize: 0.06
+  minEnergy: 1
+  maxEnergy: 1
+  minEmission: 5
+  maxEmission: 10
+  worldVelocity: {x: 0, y: 0, z: 0}
+  localVelocity: {x: 0, y: 0, z: -5}
+  rndVelocity: {x: 5, y: 2, z: -5}
+  emitterVelocityScale: 0
+  tangentVelocity: {x: 0, y: 0, z: 0}
+  angularVelocity: 0
+  rndAngularVelocity: 0
+  rndRotation: 0
+  Simulate in Worldspace?: 1
+  m_OneShot: 1
+  m_Ellipsoid: {x: 12, y: 2, z: 2}
+  m_MinEmitterRange: 10
 --- !u!26 &26477260047932940
 ParticleRenderer:
-  serializedVersion: 2
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1584463546194271}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_MotionVectors: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 6220607cadf8f4244a60786c7d783191, type: 2}
   - {fileID: 2100000, guid: 6220607cadf8f4244a60786c7d783191, type: 2}
-  m_SubsetIndices:
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  serializedVersion: 2
   m_CameraVelocityScale: 0
   m_StretchParticles: 0
   m_LengthScale: 3
@@ -115,15 +143,14 @@ ParticleRenderer:
     x Tile: 1
     y Tile: 1
     cycles: 1
---- !u!1001 &100100000
-Prefab:
-  serializedVersion: 2
+--- !u!114 &114764812118336898
+MonoBehaviour:
   m_ObjectHideFlags: 1
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications: []
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1584463546194271}
-  m_IsPrefabParent: 1
-  m_IsExploded: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1584463546194271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ad8113cec8d06d41b9b696bad7cfb19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

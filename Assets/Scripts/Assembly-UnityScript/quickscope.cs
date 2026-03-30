@@ -34,8 +34,11 @@ public class quickscope : MonoBehaviour
 
 	private float counter;
 
+	GameObject cam;
+
 	public virtual void Start()
 	{
+		cam = GameObject.Find("Main Camera");
 		transform.Rotate(new Vector3(0f, 0f, 0f));
 		transform.Translate(new Vector3(-5f, 5f, 0f));
 	}
@@ -98,6 +101,11 @@ public class quickscope : MonoBehaviour
 		if (!(counter <= 14f) && !(counter >= 15f) && GetComponent<Renderer>().material.mainTexture != quk14)
 		{
 			GetComponent<Renderer>().material.mainTexture = quk14;
+		}
+
+		if (!(transform.position.x >= cam.transform.position.x - 32f))
+		{
+			UnityEngine.Object.Destroy(this.gameObject);
 		}
 	}
 
