@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 [Serializable]
 public class bigleyscore : MonoBehaviour
@@ -37,11 +38,11 @@ public class bigleyscore : MonoBehaviour
 			score = (int)Mathf.Round(scoreCounter);
 			if (multiplyer > 1)
 			{
-				GetComponent<GUIText>().text = "SWAG Points: " + score.ToString() + " X" + multiplyer.ToString();
+				GetComponent<Text>().text = "SWAG Points: " + score.ToString() + " X" + multiplyer.ToString();
 			}
 			else
 			{
-				GetComponent<GUIText>().text = "SWAG Points: " + score.ToString();
+				GetComponent<Text>().text = "SWAG Points: " + score.ToString();
 			}
 		}
 		else if (checkPlayer)
@@ -49,7 +50,7 @@ public class bigleyscore : MonoBehaviour
 			checkPlayer = false;
 			GetComponent<AudioSource>().PlayOneShot(gameOverSound);
 			GetComponent<AudioSource>().PlayOneShot(gameOverSound2);
-			GetComponent<GUIText>().text = "SWAG Points: " + score.ToString();
+			GetComponent<Text>().text = "SWAG Points: " + score.ToString();
 			if (!((float)score <= PlayerPrefs.GetFloat("highscore")))
 			{
 				PlayerPrefs.SetFloat("highscore", score);

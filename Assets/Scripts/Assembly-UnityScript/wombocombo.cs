@@ -33,7 +33,7 @@ public class wombocombo : MonoBehaviour
 	public virtual void Start()
 	{
 		player = GameObject.Find("Player");
-		scoreGUI = GameObject.Find("GUI/score");
+		scoreGUI = GameObject.Find("LowerLCD/Canvas/score");
 	}
 
 	public virtual void Update()

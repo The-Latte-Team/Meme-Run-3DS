@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 [Serializable]
 public class score : MonoBehaviour
@@ -37,11 +38,11 @@ public class score : MonoBehaviour
 			m_score = (int)Mathf.Round(scoreCounter);
 			if (multiplyer > 1)
 			{
-				GetComponent<GUIText>().text = "SWAG Points: " + m_score.ToString() + " X" + multiplyer.ToString();
+				GetComponent<Text>().text = "SWAG Points: " + m_score.ToString() + " X" + multiplyer.ToString();
 			}
 			else
 			{
-				GetComponent<GUIText>().text = "SWAG Points: " + m_score.ToString();
+				GetComponent<Text>().text = "SWAG Points: " + m_score.ToString();
 			}
 		}
 		else if (checkPlayer)
@@ -49,7 +50,7 @@ public class score : MonoBehaviour
 			checkPlayer = false;
 			GetComponent<AudioSource>().PlayOneShot(gameOverSound);
 			GetComponent<AudioSource>().PlayOneShot(gameOverSound2);
-			GetComponent<GUIText>().text = "SWAG Points: " + m_score.ToString();
+			GetComponent<Text>().text = "SWAG Points: " + m_score.ToString();
 			if (!((float)m_score <= PlayerPrefs.GetFloat("highscore")))
 			{
 				PlayerPrefs.SetFloat("highscore", m_score);

@@ -28,7 +28,7 @@ public class pickup : MonoBehaviour
 
 	private GameObject player;
 
-	private GameObject scoreGUI;
+	public GameObject scoreGUI;
 
 	private bool lostMultiplyer;
 
@@ -37,7 +37,7 @@ public class pickup : MonoBehaviour
 	public virtual void Start()
 	{
 		player = GameObject.Find("Player");
-		scoreGUI = GameObject.Find("GUI/score");
+		scoreGUI = GameObject.Find("LowerLCD/Canvas/score");
 	}
 
 	public virtual void Update()
