@@ -26,7 +26,7 @@ public class platform : MonoBehaviour
 				switch (_state)
 				{
 				default:
-					result = (Yield(2, new WaitForSeconds(10f)) ? 1 : 0);
+					result = (Yield(2, new WaitForSeconds(0.3f)) ? 1 : 0);
 					break;
 				case 2:
 					UnityEngine.Object.Destroy(_0024self__002450.gameObject);
