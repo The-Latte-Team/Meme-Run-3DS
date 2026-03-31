@@ -6,17 +6,23 @@ public class cameravelocity : MonoBehaviour
 {
 	private float speed;
 
+	Rigidbody rb;
+
 	public cameravelocity()
 	{
 		speed = 12f;
 	}
 
+	public virtual void Start()
+	{
+		rb = GetComponent<Rigidbody>();
+	}
+
 	public virtual void Update()
 	{
-		float x = speed;
-		Vector3 velocity = GetComponent<Rigidbody>().velocity;
-		float num = (velocity.x = x);
-		Vector3 vector = (GetComponent<Rigidbody>().velocity = velocity);
+		Vector3 velocity = rb.velocity;
+		velocity.x = speed;
+		rb.velocity = velocity;
 	}
 
 	public virtual void receiveSpeed(float theSpeed)

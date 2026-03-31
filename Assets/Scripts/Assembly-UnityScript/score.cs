@@ -19,6 +19,8 @@ public class score : MonoBehaviour
 
 	private int multiplyer;
 
+	Text text;
+
 	public score()
 	{
 		checkPlayer = true;
@@ -28,6 +30,7 @@ public class score : MonoBehaviour
 	public virtual void Start()
 	{
 		player = GameObject.Find("Player");
+		text = GetComponent<Text>();
 	}
 
 	public virtual void Update()
@@ -38,11 +41,11 @@ public class score : MonoBehaviour
 			m_score = (int)Mathf.Round(scoreCounter);
 			if (multiplyer > 1)
 			{
-				GetComponent<Text>().text = "SWAG Points: " + m_score.ToString() + " X" + multiplyer.ToString();
+				text.text = "SWAG Points: " + m_score.ToString() + " X" + multiplyer.ToString();
 			}
 			else
 			{
-				GetComponent<Text>().text = "SWAG Points: " + m_score.ToString();
+				text.text = "SWAG Points: " + m_score.ToString();
 			}
 		}
 		else if (checkPlayer)
@@ -50,7 +53,7 @@ public class score : MonoBehaviour
 			checkPlayer = false;
 			GetComponent<AudioSource>().PlayOneShot(gameOverSound);
 			GetComponent<AudioSource>().PlayOneShot(gameOverSound2);
-			GetComponent<Text>().text = "SWAG Points: " + m_score.ToString();
+			text.text = "SWAG Points: " + m_score.ToString();
 			if (!((float)m_score <= PlayerPrefs.GetFloat("highscore")))
 			{
 				PlayerPrefs.SetFloat("highscore", m_score);

@@ -19,6 +19,8 @@ public class bigleyscore : MonoBehaviour
 
 	private int multiplyer;
 
+	Text text;
+
 	public bigleyscore()
 	{
 		checkPlayer = true;
@@ -28,6 +30,7 @@ public class bigleyscore : MonoBehaviour
 	public virtual void Start()
 	{
 		player = GameObject.Find("Bigley");
+		text = GetComponent<Text>();
 	}
 
 	public virtual void Update()
@@ -38,11 +41,11 @@ public class bigleyscore : MonoBehaviour
 			score = (int)Mathf.Round(scoreCounter);
 			if (multiplyer > 1)
 			{
-				GetComponent<Text>().text = "SWAG Points: " + score.ToString() + " X" + multiplyer.ToString();
+				text.text = "SWAG Points: " + score.ToString() + " X" + multiplyer.ToString();
 			}
 			else
 			{
-				GetComponent<Text>().text = "SWAG Points: " + score.ToString();
+				text.text = "SWAG Points: " + score.ToString();
 			}
 		}
 		else if (checkPlayer)
@@ -50,7 +53,7 @@ public class bigleyscore : MonoBehaviour
 			checkPlayer = false;
 			GetComponent<AudioSource>().PlayOneShot(gameOverSound);
 			GetComponent<AudioSource>().PlayOneShot(gameOverSound2);
-			GetComponent<Text>().text = "SWAG Points: " + score.ToString();
+			text.text = "SWAG Points: " + score.ToString();
 			if (!((float)score <= PlayerPrefs.GetFloat("highscore")))
 			{
 				PlayerPrefs.SetFloat("highscore", score);

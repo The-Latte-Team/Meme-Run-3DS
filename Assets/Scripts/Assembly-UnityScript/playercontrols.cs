@@ -183,4 +183,12 @@ public class playercontrols : MonoBehaviour
 	public virtual void Main()
 	{
 	}
+
+	void OnCollisionStay(Collision collisionInfo) {
+        if(!isStanding)
+		{
+			if(transform.position.y < -2.3f)
+				transform.position = new Vector3(transform.position.x, -2.3f, transform.position.z);
+		}
+    }
 }

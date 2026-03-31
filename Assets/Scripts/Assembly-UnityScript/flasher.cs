@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class flasher : MonoBehaviour
 {
 	public GameObject gameOverText;
+	public GameObject gameOverTextLowerLCD;
 
 	private bool gameOver;
 
@@ -15,6 +16,8 @@ public class flasher : MonoBehaviour
 
 	public Image doubleFlash;
 
+	GUITexture texture;
+
 	public virtual void Start()
 	{
 		player = GameObject.Find("Player");
@@ -22,10 +25,11 @@ public class flasher : MonoBehaviour
 		{
 			isMenu = true;
 		}
+		texture = GetComponent<GUITexture>();
 		float a = 0.5f;
-		Color color = GetComponent<GUITexture>().color;
+		Color color = texture.color;
 		float num = (color.a = a);
-		Color color2 = (GetComponent<GUITexture>().color = color);
+		Color color2 = (texture.color = color);
 		doubleFlash.color = color2;
 	}
 
@@ -33,39 +37,39 @@ public class flasher : MonoBehaviour
 	{
 		if (!isMenu)
 		{
-			if (!(GetComponent<GUITexture>().color.a <= 0f) && !gameOver)
+			if (!(texture.color.a <= 0f) && !gameOver)
 			{
-				float a = GetComponent<GUITexture>().color.a - Time.deltaTime / 2f;
-				Color color = GetComponent<GUITexture>().color;
+				float a = texture.color.a - Time.deltaTime / 2f;
+				Color color = texture.color;
 				float num = (color.a = a);
-				Color color2 = (GetComponent<GUITexture>().color = color);
+				Color color2 = (texture.color = color);
 				doubleFlash.color = color2;
 			}
-			if (!(GetComponent<GUITexture>().color.a <= 0.35f) && gameOver)
+			if (!(texture.color.a <= 0.35f) && gameOver)
 			{
-				float a2 = GetComponent<GUITexture>().color.a - Time.deltaTime / 2f;
-				Color color4 = GetComponent<GUITexture>().color;
+				float a2 = texture.color.a - Time.deltaTime / 2f;
+				Color color4 = texture.color;
 				float num2 = (color4.a = a2);
-				Color color5 = (GetComponent<GUITexture>().color = color4);
+				Color color5 = (texture.color = color4);
 				doubleFlash.color = color5;
 			}
-			if (!(GetComponent<GUITexture>().color.a > 0f) && GetComponent<GUITexture>().enabled && !gameOver)
+			if (!(texture.color.a > 0f) && texture.enabled && !gameOver)
 			{
-				GetComponent<GUITexture>().enabled = false;
+				texture.enabled = false;
 				doubleFlash.enabled = false;
 			}
-			if (!(GetComponent<GUITexture>().color.a <= 0f) && !GetComponent<GUITexture>().enabled && !gameOver)
+			if (!(texture.color.a <= 0f) && !texture.enabled && !gameOver)
 			{
-				GetComponent<GUITexture>().enabled = true;
+				texture.enabled = true;
 				doubleFlash.enabled = false;
 			}
 		}
-		else if (!(GetComponent<GUITexture>().color.a <= 0.25f))
+		else if (!(texture.color.a <= 0.25f))
 		{
-			float a3 = GetComponent<GUITexture>().color.a - Time.deltaTime / 2f;
-			Color color7 = GetComponent<GUITexture>().color;
+			float a3 = texture.color.a - Time.deltaTime / 2f;
+			Color color7 = texture.color;
 			float num3 = (color7.a = a3);
-			Color color8 = (GetComponent<GUITexture>().color = color7);
+			Color color8 = (texture.color = color7);
 			doubleFlash.color = color8;
 		}
 	}
@@ -73,18 +77,20 @@ public class flasher : MonoBehaviour
 	public virtual void gameOverFlash()
 	{
 		float a = 0.5f;
-		Color color = GetComponent<GUITexture>().color;
+		Color color = texture.color;
 		float num = (color.a = a);
-		Color color2 = (GetComponent<GUITexture>().color = color);
+		Color color2 = (texture.color = color);
 		doubleFlash.color = color2;
 		doubleFlash.enabled = true;
-		GetComponent<GUITexture>().enabled = true;
+		texture.enabled = true;
 		gameOver = true;
 		int num2 = 0;
 		Vector3 position = transform.position;
 		float num3 = (position.z = num2);
 		Vector3 vector = (transform.position = position);
 		gameOverText.SetActive(true);
+		if(gameOverTextLowerLCD != null)
+			gameOverTextLowerLCD.SetActive(true);
 	}
 
 	public virtual void Main()
