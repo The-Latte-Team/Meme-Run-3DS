@@ -8083,8 +8083,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 3.9}
+  m_SizeDelta: {x: 0, y: -7.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1285950749
 MonoBehaviour:
@@ -8107,7 +8107,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: cd51cf2fa68f2e646967e5662b79f0d9, type: 3}
-    m_FontSize: 12
+    m_FontSize: 11
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -8120,7 +8120,9 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'A Ninja Pig Studios Game
 
-    MLG Coding Hax By: Jordan & Garret Schuetz'
+    MLG Coding Hax By: Jordan & Garret Schuetz
+
+    Port By: The Latte Team'
 --- !u!222 &1285950750
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8227,8 +8229,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 10.3}
+  m_SizeDelta: {x: 0, y: -20.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1334281006
 MonoBehaviour:
@@ -8251,7 +8253,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: cd51cf2fa68f2e646967e5662b79f0d9, type: 3}
-    m_FontSize: 24
+    m_FontSize: 22
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
