@@ -34,10 +34,14 @@ public class pickup : MonoBehaviour
 
 	private bool grabbedPickup;
 
+	AudioSource source;
 	public virtual void Start()
 	{
 		player = GameObject.Find("Player");
 		scoreGUI = GameObject.Find("LowerLCD/Canvas/score");
+
+		source = GetComponent<AudioSource>();
+		source.loop = false;
 	}
 
 	public virtual void Update()
@@ -75,7 +79,10 @@ public class pickup : MonoBehaviour
 	public virtual void getMultiplyer()
 	{
 		scoreGUI.SendMessage("addMultiplyer", SendMessageOptions.DontRequireReceiver);
-		GetComponent<AudioSource>().PlayOneShot(pickupSound);
+
+		source.clip = pickupSound;
+		source.Play();
+		
 		GetComponent<Renderer>().enabled = false;
 	}
 

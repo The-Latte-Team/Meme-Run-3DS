@@ -30,6 +30,7 @@ public class wombocombo : MonoBehaviour
 
 	private bool grabbedPickup;
 
+	AudioSource source;
 	public virtual void Start()
 	{
 		player = GameObject.Find("Player");
@@ -83,7 +84,8 @@ public class wombocombo : MonoBehaviour
 	public virtual void getMultiplyer()
 	{
 		scoreGUI.SendMessage("addMultiplyer", SendMessageOptions.DontRequireReceiver);
-		GetComponent<AudioSource>().PlayOneShot(pickupSound);
+		source.clip = pickupSound;
+		source.Play();
 		GetComponent<Renderer>().enabled = false;
 	}
 

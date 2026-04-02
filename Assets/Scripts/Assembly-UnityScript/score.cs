@@ -21,6 +21,8 @@ public class score : MonoBehaviour
 
 	Text text;
 
+	public AudioSource source;
+	public AudioSource source2;
 	public score()
 	{
 		checkPlayer = true;
@@ -51,8 +53,11 @@ public class score : MonoBehaviour
 		else if (checkPlayer)
 		{
 			checkPlayer = false;
-			GetComponent<AudioSource>().PlayOneShot(gameOverSound);
-			GetComponent<AudioSource>().PlayOneShot(gameOverSound2);
+			source.clip = gameOverSound;
+			source2.clip = gameOverSound2;
+
+			source.Play();
+			source2.Play();
 			text.text = "SWAG Points: " + m_score.ToString();
 			if (!((float)m_score <= PlayerPrefs.GetFloat("highscore")))
 			{

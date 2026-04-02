@@ -43,6 +43,8 @@ public class playercontrols : MonoBehaviour
 
 	private bool isStanding;
 
+	public AudioSource jumpSource;
+
 #if UNITY_WIIU
 	public WiiU.GamePad myGP;
 	WiiU.GamePadState gamePad;
@@ -115,7 +117,8 @@ public class playercontrols : MonoBehaviour
 				Vector3 vector3 = (GetComponent<Rigidbody>().velocity = velocity2);
 				if (!(jumpCounter <= 0.25f))
 				{
-					GetComponent<AudioSource>().PlayOneShot(jumpSound);
+					jumpSource.clip = jumpSound;
+					jumpSource.Play();
 					jumpCounter = 0f;
 				}
 			}
