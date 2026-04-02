@@ -35,6 +35,7 @@ public class wombocombo : MonoBehaviour
 	{
 		player = GameObject.Find("Player");
 		scoreGUI = GameObject.Find("LowerLCD/Canvas/score");
+		source = GetComponent<AudioSource>();
 	}
 
 	public virtual void Update()
